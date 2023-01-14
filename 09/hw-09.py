@@ -18,9 +18,14 @@ def get_number_by_index_from_fibonacci_sequence(index):
         a, b = b, a + b
 
 
-number = int(input('Enter your number: '))
-result = list(get_number_by_index_from_fibonacci_sequence(number))[number]
-print(f'You got number {result} from Fibonacci sequence.')
+try:
+    number = int(input('Enter your number: '))
+except Exception as message:
+    print(message)
+else:
+    result = list(get_number_by_index_from_fibonacci_sequence(number))[number]
+    print(f'You got number {result} from Fibonacci sequence.')
+
 
 # Task 2.
 class MyFibonacci:
@@ -50,9 +55,14 @@ class MyFibonacci:
         return next_element
 
 
-number = int(input('Enter your number: '))
-my_iterator_object = MyFibonacci(number)
-print(list(my_iterator_object)[-1])
+try:
+    number = int(input('Enter your number: '))
+except Exception as message:
+    print(message)
+else:
+    my_iterator_object = MyFibonacci(number)
+    print(list(my_iterator_object)[-1])
+
 
 # Task 3.
 def get_fibonacci_using_recursion(index):
@@ -62,9 +72,14 @@ def get_fibonacci_using_recursion(index):
         return get_fibonacci_using_recursion(index - 1) + get_fibonacci_using_recursion(index - 2)
 
 
-number = int(input('Enter your number: '))
-result = get_fibonacci_using_recursion(number)
-print(f'You got number {result} from Fibonacci sequence.')
+try:
+    number = int(input('Enter your number: '))
+except Exception as message:
+    print(message)
+else:
+    result = get_fibonacci_using_recursion(number)
+    print(f'You got number {result} from Fibonacci sequence.')
+
 
 # Task 4.
 def get_factorial_using_recursion(number):
