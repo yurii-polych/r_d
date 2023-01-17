@@ -48,14 +48,9 @@ class MyContextManager:
         return self
 
     def __exit__(self, exc_type, exc_value, exc_traceback):
+        if exc_type:
+            print(exc_value)
         print('=' * 10)
-
-
-with MyContextManager() as manager:
-    try:
-        print('Some code here.')
-    except Exception as error:
-        print(error)
 
 
 # ==========================================================
