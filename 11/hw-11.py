@@ -51,6 +51,7 @@ class MyContextManager:
         if exc_type:
             print(exc_value)
         print('=' * 10)
+        return True
 
 
 # ==========================================================
