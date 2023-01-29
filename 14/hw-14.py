@@ -18,7 +18,7 @@ from re import fullmatch, sub
 
 # =============== Task 1. ===============
 def validate_phonenumber(phonenumber):
-    return fullmatch(r'(\+380[0-9]{9}$)|(380[0-9]{9}$)|(0[0-9]{9}$)', phonenumber)
+    return fullmatch(r'(\+?380|0)\d{9}$', phonenumber)
 
 
 try:
@@ -69,7 +69,7 @@ while True:
 def change_email():
     file_name = input('Enter file name: ')
     replaced_email = '*@*'
-    pattern = r'[\w\-\.]+@[a-zA-Z]+\.com\.ua|[\w\-\.]+@[a-zA-Z]+\.com'
+    pattern = r'[\w\-\.]+@[a-zA-Z]+[\.a-z]+'
     with open(file_name, 'r') as file:
         content = file.read()
         result = sub(pattern, replaced_email, content)
