@@ -69,9 +69,7 @@ class Bot:
 
 # Task 2. ====================================
 class TelegramBot(Bot):
-    def __init__(self, name):
-        self.url = None
-        self.chat_id = None
+    def __init__(self, name, url=None, chat_id=None):
         super().__init__(name)
 
     def send_message(self, message):
@@ -91,7 +89,7 @@ class MyStr(str):
         super().__init__()
 
     def __str__(self):
-        return self.text.upper()
+        return self.upper()
 
 
 # Task 4. ====================================
@@ -101,7 +99,7 @@ class User:
 
     def __eq__(self, other):
         name_lower = self.name.lower()
-        return name_lower == other.lower()
+        return name_lower == other.name.lower()
 
 
 # Task 5. ====================================
