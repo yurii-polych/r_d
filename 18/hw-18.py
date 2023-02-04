@@ -70,6 +70,8 @@ class Bot:
 # Task 2. ====================================
 class TelegramBot(Bot):
     def __init__(self, name, url=None, chat_id=None):
+        self.url = url
+        self.chat_id = chat_id
         super().__init__(name)
 
     def send_message(self, message):
