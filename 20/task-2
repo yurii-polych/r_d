@@ -1,0 +1,6 @@
+INSERT INTO users (first_name, last_name, age) VALUES
+            ('Name_1', 'Lastname_1', 10),
+            ('Name_2', 'Lastname_2', 20),
+            ('Name_3', 'Lastname_3', 30),
+            ('Name_4', 'Lastname_4', 40),
+            ('Name_5', 'Lastname_5', 50);
