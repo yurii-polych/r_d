@@ -1,0 +1,7 @@
+-- 8. Написати запит, який виведе всі назви книжок із кількістью їх продажів в порядку спадання кількості продажів.
+
+SELECT b.title, COUNT(p.book_id) AS amount
+FROM purchase p
+JOIN books b ON p.book_id = b.id
+GROUP BY b.id
+ORDER BY amount DESC;
