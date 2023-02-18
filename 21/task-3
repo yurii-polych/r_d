@@ -1,0 +1,3 @@
+SELECT age, COUNT(id) AS users
+FROM users
+GROUP BY age;
