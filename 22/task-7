@@ -1,0 +1,6 @@
+-- 7. Написати запит, який виведе загальні суми продажів для кожного автора та кількість покупок.
+
+SELECT b.author, SUM(b.price) AS total_cost, COUNT(purchase.book_id) total_amount
+FROM purchase
+JOIN books b on b.id = purchase.book_id
+GROUP BY b.author;

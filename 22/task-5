@@ -1,0 +1,4 @@
+SELECT COUNT(p.book_id) AS amount
+FROM purchase p
+JOIN books b ON p.book_id = b.id
+WHERE b.author LIKE 'Rowling';

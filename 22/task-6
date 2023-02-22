@@ -1,0 +1,5 @@
+SELECT u.id, u.first_name, u.last_name, SUM(b.price) AS total_purchases
+FROM purchase p
+JOIN users u ON u.id = p.user_id
+JOIN books b on b.id = p.book_id
+GROUP BY u.id;
