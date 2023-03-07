@@ -1,0 +1,100 @@
+html, body {
+    height: 100%;
+}
+
+html {
+    background-color: rgb(234, 234, 237);
+    display: table;
+    margin: auto;
+}
+
+h1 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+body {
+    background-color: #fff;
+    color: #211f1f;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 2rem;
+    border: 2px solid rgba(197, 197, 199, 0.76);
+    font-family: helvetica, Verdana, sans-serif;
+    width: 800px;
+}
+
+h2 {
+    font-size: 16px;
+    text-align: center;
+}
+
+p {
+    text-align: left;
+    padding-left: 210px;
+}
+
+.tleft {
+    text-align: left;
+    padding-left: 10px;
+    width: 75%;
+}
+
+.tright {
+    text-align: center;
+    width: 25%;
+}
+
+tr:hover {
+    background-color: #D6EEEE;
+}
+
+.about img {
+    float: left;
+    border-radius: 120px;
+    padding: 20px;
+    max-width: 100px;
+}
+
+.about {
+    border: 3px solid rgba(225, 234, 229, 0.85);
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.lessons {
+    border: 3px solid rgba(225, 234, 229, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 6px;
+    margin-top: 6px;
+}
+
+table, td, th {
+    border: 2px aliceblue groove;
+    border-collapse: collapse;
+    height: 25px;
+}
+
+table {
+    width: 100%;
+}
+
+.experience {
+    border: 3px solid rgba(225, 234, 229, 0.85);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.middle {
+    margin: 15px 0 15px 0;
+}
+
+footer {
+    alignment: center;
+    text-align: center;
+    font-size: 11px;
+    padding-top: 20px;
+}
