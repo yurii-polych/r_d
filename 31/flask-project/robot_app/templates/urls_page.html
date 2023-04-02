@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <title>Page with urls</title>
+    </head>
+    <body>
+        <div>
+            <h2>Hello, {{ username }}</h2>
+        </div>
+        <div>
+            <form method="post" action="/logout">
+                <input type="hidden" name="_method" value="GET">
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+        <div>
+            {% for page, url in attrs.items() %}
+                <a href="{{ url }}">{{ page }}</a><br>
+            {% endfor %}
+        </div>
+    </body>
+</html>

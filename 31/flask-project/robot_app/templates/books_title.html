@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <title>Book title</title>
+    </head>
+    <body>
+        <div>
+          <h2>Hello, {{ username }}</h2>
+        </div>
+        <div>
+            <form method="post" action="/logout">
+                <input type="hidden" name="_method" value="GET">
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+
+      <div>The book title is: {{ book_title }}.</div>
+    </body>
+</html>

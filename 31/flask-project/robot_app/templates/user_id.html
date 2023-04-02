@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <title>User id</title>
+    </head>
+    <body>
+        <div>
+            <h2>Hello, {{ username }}</h2>
+        </div>
+        <div>
+            <form method="post" action="/logout">
+                <input type="hidden" name="_method" value="GET">
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+        <div>
+            The user_id is: {{ id }}.
+        </div>
+    </body>
+</html>
