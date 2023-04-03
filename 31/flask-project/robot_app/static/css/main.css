@@ -1,0 +1,12 @@
+html {
+    background-color: #D6EEEE;
+    width: 100%;
+}
+body {
+    width: 80%;
+    background-color: aliceblue;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Roboto', sans-serif;
+    display: table;
+    margin: auto;
+}
