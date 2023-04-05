@@ -1,4 +1,11 @@
+import os
+from dotenv import load_dotenv
+
+
+load_dotenv()
+
+
 class AppConfig:
-    DEBUG = True
-    HOST = '0.0.0.0'
-    PORT = 4200
+    DEBUG = os.getenv('DEBUG')
+    HOST = os.getenv('HOST')
+    PORT = os.getenv('PORT')

@@ -1,11 +1,11 @@
+import os
 from robot_app import app
 from random import randint, sample
 from flask import request, redirect, abort, render_template, session, url_for
 from re import fullmatch
-import secrets
 
-key = secrets.token_hex(32)
-app.config['SECRET_KEY'] = b'key'
+
+app.secret_key = os.getenv('SECRET_KEY')
 
 
 @app.route('/hello')
