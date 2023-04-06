@@ -14,6 +14,16 @@ def get_size_from_params():
     return size
 
 
+def get_rows_from_model(model):
+    size = get_size_from_params()
+    if size:
+        rows = db.session.scalars(db.Select(model).limit(size))
+        return rows
+    else:
+        rows = db.session.scalars(db.Select(model))
+        return rows
+
+
 @app.post('/users')
 def add_user():
     user = User(
@@ -28,11 +38,7 @@ def add_user():
 
 @app.route('/users')
 def get_users():
-    size = get_size_from_params()
-    if size:
-        users = db.session.scalars(db.Select(User).limit(size))
-    else:
-        users = db.session.scalars(db.Select(User))
+    users = get_rows_from_model(User)
     result = [{
         'id': user.id,
         'first_name': user.first_name,
@@ -69,11 +75,8 @@ def add_book():
 
 @app.route('/books')
 def get_books():
-    size = get_size_from_params()
-    if size:
-        books = db.session.scalars(db.Select(Book).limit(size))
-    else:
-        books = db.session.scalars(db.Select(Book))
+    books = get_rows_from_model(Book)
+
     result = [{
         'id': book.id,
         'title': book.title,
@@ -116,11 +119,7 @@ def add_parchase():
 
 @app.route('/purchases')
 def get_purchases():
-    size = get_size_from_params()
-    if size:
-        purchases = db.session.scalars(db.Select(Purchase).limit(size))
-    else:
-        purchases = db.session.scalars(db.Select(Purchase))
+    purchases = get_rows_from_model(Purchase)
     result = [{
         'id': purchase.id,
         'user_id': purchase.user_id,
