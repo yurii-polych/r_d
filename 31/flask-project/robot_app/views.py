@@ -1,5 +1,5 @@
 import os
-from . import app, db
+from robot_app import app, db
 from flask import jsonify, request
 from .models import User, Purchase, Book
 
