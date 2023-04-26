@@ -9,3 +9,6 @@ class Purchase(models.Model):
     class Meta:
         db_table = 'purchase'
         ordering = ['-date']
+
+    def __str__(self):
+        return f'User id:{self.user.id} - book id:{self.book.id} - date:{self.date}.'
