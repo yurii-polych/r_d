@@ -1,7 +1,18 @@
-from django.http import HttpResponse
 from user.models import User
+from user.forms import UserCreateForm
+
+from django.views.generic import ListView, DetailView, CreateView
 
 
-def users(request):
-    all_users = User.objects.all().values()
-    return HttpResponse(all_users)
+class UserListView(ListView):
+    model = User
+
+
+class UserDetailView(DetailView):
+    model = User
+
+
+class UserCreateView(CreateView):
+    model = User
+    form_class = UserCreateForm
+    success_url = '/users'

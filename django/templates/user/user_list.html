@@ -1,0 +1,7 @@
+<div>
+    <ul>
+        {% for user in object_list %}
+            <li>{{ user.id }}. {{ user.first_name }} {{ user.last_name }} {{ user.age }}</li>
+        {% endfor %}
+    </ul>
+</div>
