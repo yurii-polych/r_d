@@ -1,7 +1,17 @@
-from django.http import HttpResponse
-from .models import Purchase
+from purchase.models import Purchase
+
+from django.views.generic import ListView, DetailView, CreateView
 
 
-def purchases(request):
-    all_purchases = Purchase.objects.all().values()
-    return HttpResponse(all_purchases)
+class PurchaseListView(ListView):
+    model = Purchase
+
+
+class PurchaseDetailView(DetailView):
+    model = Purchase
+
+
+class PurchaseCreateView(CreateView):
+    model = Purchase
+    fields = '__all__'
+    success_url = '/purchases'
