@@ -1,18 +1,9 @@
 from user.models import User
-from user.forms import UserCreateForm
 
-from django.views.generic import ListView, DetailView, CreateView
-
-
-class UserListView(ListView):
-    model = User
+from rest_framework.viewsets import ModelViewSet
+from user.serializers import UserSerializer
 
 
-class UserDetailView(DetailView):
-    model = User
-
-
-class UserCreateView(CreateView):
-    model = User
-    form_class = UserCreateForm
-    success_url = '/users'
+class UserViewSet(ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer

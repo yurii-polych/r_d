@@ -1,17 +1,9 @@
 from purchase.models import Purchase
 
-from django.views.generic import ListView, DetailView, CreateView
+from rest_framework.viewsets import ModelViewSet
+from purchase.serializers import PurchaseSerializer
 
 
-class PurchaseListView(ListView):
-    model = Purchase
-
-
-class PurchaseDetailView(DetailView):
-    model = Purchase
-
-
-class PurchaseCreateView(CreateView):
-    model = Purchase
-    fields = '__all__'
-    success_url = '/purchases'
+class PurchaseViewSet(ModelViewSet):
+    queryset = Purchase.objects.all()
+    serializer_class = PurchaseSerializer

@@ -1,9 +1,11 @@
-from django.urls import path
-from purchase.views import PurchaseListView, PurchaseDetailView, PurchaseCreateView
+from purchase.views import PurchaseViewSet
+
+from rest_framework.routers import SimpleRouter
 
 
-urlpatterns = [
-    path('', PurchaseListView.as_view(), name='purchase-list'),
-    path('detail/<int:pk>', PurchaseDetailView.as_view(), name='purchase-detail'),
-    path('create', PurchaseCreateView.as_view(), name='purchase-create'),
-]
+urlpatterns = []
+
+router = SimpleRouter()
+router.register('', PurchaseViewSet)
+
+urlpatterns += router.urls
