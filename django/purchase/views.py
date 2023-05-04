@@ -5,5 +5,6 @@ from purchase.serializers import PurchaseSerializer
 
 
 class PurchaseViewSet(ModelViewSet):
-    queryset = Purchase.objects.all()
+    queryset = Purchase.objects.get_queryset().order_by('id')
     serializer_class = PurchaseSerializer
+    filterset_fields = '__all__'

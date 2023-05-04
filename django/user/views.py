@@ -15,3 +15,5 @@ class UserViewSet(ModelViewSet):
 
     pagination_class = UserPagination
     UserPagination.page_size = 10
+
+    filterset_fields = '__all__'
