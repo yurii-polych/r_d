@@ -1,18 +1,10 @@
 from book.models import Book
-from book.forms import BookCreateForm
 
-from django.views.generic import ListView, CreateView, DetailView
-
-
-class BookListView(ListView):
-    model = Book
+from rest_framework.viewsets import ModelViewSet
+from book.serializers import BookSerializer
 
 
-class BookDetailView(DetailView):
-    model = Book
-
-
-class BookCreateView(CreateView):
-    model = Book
-    form_class = BookCreateForm
-    success_url = '/books'
+class BookViewSet(ModelViewSet):
+    queryset = Book.objects.get_queryset().order_by('id')
+    serializer_class = BookSerializer
+    filterset_fields = ['id', 'author', ]

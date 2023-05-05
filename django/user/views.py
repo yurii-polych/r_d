@@ -1,18 +1,19 @@
 from user.models import User
-from user.forms import UserCreateForm
 
-from django.views.generic import ListView, DetailView, CreateView
-
-
-class UserListView(ListView):
-    model = User
+from rest_framework.viewsets import ModelViewSet
+from user.serializers import UserSerializer
+from rest_framework.pagination import PageNumberPagination
 
 
-class UserDetailView(DetailView):
-    model = User
+class UserPagination(PageNumberPagination):
+    pass
 
 
-class UserCreateView(CreateView):
-    model = User
-    form_class = UserCreateForm
-    success_url = '/users'
+class UserViewSet(ModelViewSet):
+    queryset = User.objects.get_queryset().order_by('id')
+    serializer_class = UserSerializer
+
+    pagination_class = UserPagination
+    UserPagination.page_size = 10
+
+    filterset_fields = '__all__'
