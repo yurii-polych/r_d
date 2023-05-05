@@ -15,3 +15,12 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 
 # Load task modules from all registered Django apps.
 app.autodiscover_tasks()
+
+app.conf.beat_schedule = {
+    'print-every-60-seconds': {
+        'task': 'user.tasks.print_user_count_every_minute',
+        'schedule': 60,
+        'args': (),
+        'kwargs': {},
+    },
+}
