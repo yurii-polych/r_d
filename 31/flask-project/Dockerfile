@@ -9,5 +9,3 @@ RUN pip install -r requirements.txt
 COPY . .
 
 EXPOSE 4200
-
-CMD python run.py 0.0.0.0:4200
